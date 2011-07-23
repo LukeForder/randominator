@@ -63,7 +63,7 @@ def mergeRowSets(sets):
 def getSwitches(argStr):
 
 	space_regex = re.compile(r'\s{1:}')
-	regex = re.compile(r'-[fo] [\w\.\: ]+[-]*[\w\.\: ]+')
+	regex = re.compile(r'-[fo] (?:[\w\.\:\- ]+ (?!-))+')
 	
 	matches = regex.findall(argStr)
 	for idx in range(0,len(matches)):
